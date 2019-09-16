@@ -1,0 +1,3 @@
+# Don't track the CSE backup files
+*.c~
+*_soln.c
