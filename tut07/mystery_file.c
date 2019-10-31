@@ -52,9 +52,10 @@ int main(int argc, char *argv[]) {
 // return the number of sightings of Orca
 
 int count_orca_sightings(int n_sightings, struct pod sightings[n_sightings]) {
-    // REPLACE THIS COMMENT WITH YOUR CODE
-    // THIS FUNCTION SHOULD NOT CALL SCANF OR PRINTF
-    // IT SHOULD JUST RETURN A VALUE
+    int i = 0;
+    while (i < n_sightings) {
+        printf(sightings[i].species);
+    }
     return 42; // CHANGE ME
 }
 
