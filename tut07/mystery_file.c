@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 int count_orca_sightings(int n_sightings, struct pod sightings[n_sightings]) {
     int i = 0;
     while (i < n_sightings) {
-        printf(sightings[i].species);
+        printf("%s\n", sightings[i].species);
     }
     return 42; // CHANGE ME
 }
