@@ -60,9 +60,9 @@ Node copy(Node head) {
         last_new_node = last_new_node->next;
         curr = curr->next;
     }
-    // This won't actually be necessary necause our create_node() function makes
-    // each next field NULL already
-    last_new_node->next = NULL;
+    // If we did this without a new node function, we might need to set 
+    // last_new_node to NULL here, but because our create_node() function
+    // does this, we don't need to it again.
     
     return new_head;
 }
