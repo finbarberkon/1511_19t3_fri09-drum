@@ -8,11 +8,32 @@
 
 #include "List.h"
 
+// creates a struct node with the given data value
+// returns a pointer to this node
+struct node *create_node(int data) {
+    struct node *new = malloc(sizeof(struct node));
+    assert(new != NULL);
+    new->data = data;
+    new->next = NULL;
+
+    return new;
+}
+
 // given two linked lists, add list2 to the end of list1 so that they form a
 // single linked list, and return the head of that list
 Node list_append(Node list1, Node list2) {
-    // TODO implement this function and change return value
-    return NULL;
+    if (list1 == NULL) {
+        return list2;
+    }
+    
+    Node curr = list1;
+    while (curr->next != NULL) {
+        curr = curr->next;
+    }
+    
+    curr->next = list2;
+    
+    return list1;
 }
 
 // given a linked list, create a copy of the list, and return the head of the 
@@ -20,8 +41,30 @@ Node list_append(Node list1, Node list2) {
 // Note: the list should duplicate every node in memory not just provide 
 // duplicate pointers to the same list
 Node copy(Node head) {
-    // TODO implement this function and change return value
-    return NULL;
+    if (head == NULL) {
+        return NULL;
+    }
+    
+    // Create a copy of the head node
+    Node new_head = create_node(head->data);
+    
+    // And keep track of the last new node we have created
+    Node last_new_node = new_head;
+    
+    Node curr = head->next;
+    while (curr != NULL) {
+        // Make a copy of the current node
+        last_new_node->next = create_node(curr->data);
+        
+        // Iterate along on both lists
+        last_new_node = last_new_node->next;
+        curr = curr->next;
+    }
+    // This won't actually be necessary necause our create_node() function makes
+    // each next field NULL already
+    last_new_node->next = NULL;
+    
+    return new_head;
 }
 
 // given two lists, determine if they are identical, returning TRUE or FALSE 

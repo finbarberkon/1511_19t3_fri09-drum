@@ -12,6 +12,10 @@ int main(int argc, char *argv[]) {
 
     // Convert our command line arguments into a linked list of ints
     Node head = create_list(argv, argc - 1);
+    
+    Node new = copy(head);
+    
+    Node both = list_append(head, new);
 
-    print_list(head);
+    print_list(both);
 }
