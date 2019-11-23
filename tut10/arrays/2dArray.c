@@ -37,8 +37,22 @@ int main(void) {
 
 // For any number less than 'value', make it an 0 instead
 void remove_less_than(int array[SIZE][SIZE], int value) {
-    // We didn't get to do this one, but remember to always reset your inner 
-    // loop variable each time the outer loop iterates
+    int i = 0;
+    while (i < SIZE) {
+        int j = 0;
+        while (j < SIZE) {
+            
+            // Apart from this if statement, the rest of this code is a generic
+            // 2 dimensional while loop. This if statement then checks each 
+            // element of the array
+            if (array[i][j] < value) {
+                array[i][j] = 0;
+            }
+
+            j++;
+        }
+        i++;
+    }
 }
 
 

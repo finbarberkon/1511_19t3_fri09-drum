@@ -12,11 +12,17 @@ int main(void) {
     
     printf("Please enter some text to be stripped of punctuation:\n");
 
+    // initialise your ch character (like: int i = 0;)
     int ch = getchar();
+    // Make sure the loop ends (like: while (i < SIZE))
     while (ch != EOF) {
+
+        // Do something to each element
         if (isAlpha(ch) == TRUE) {
             putchar(ch);
         }
+
+        // increment your condition variable (like: i++;)
         ch = getchar();
     }
 

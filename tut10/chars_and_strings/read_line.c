@@ -26,7 +26,10 @@ void read_line(char *string, int len) {
     fgets(string, len, stdin);
     
     int i = 0;
-    while (string[i] != '\n') {
+    // We want to make sure we also break out of this loop if we reach the end 
+    // of the string without finding a newline, so we make sure to stop with
+    // room to add a null terminator into the last element of the array
+    while (string[i] != '\n' && i < len - 1) {
         i++;
     }
     string[i] = '\0';
