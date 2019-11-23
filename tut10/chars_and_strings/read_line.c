@@ -4,7 +4,7 @@
 
 #define MAX_STR_LEN 16
 
-void read_line(char *buffer, int len);
+void read_line(char *string, int len);
 
 int main(void) {
     // Declare a character array to hold our string. Set it initially to be
@@ -20,8 +20,14 @@ int main(void) {
     return 0;
 }
 
-// Reads a line of input into `buffer`, excluding the newline;
-// then ensures that `buffer` is a null-terminated string.
+// Reads a line of input into `string`, excluding the newline;
+// then ensures that `string` is a null-terminated string.
 void read_line(char *string, int len) {
-    // PUT YOUR CODE HERE
+    fgets(string, len, stdin);
+    
+    int i = 0;
+    while (string[i] != '\n') {
+        i++;
+    }
+    string[i] = '\0';
 }

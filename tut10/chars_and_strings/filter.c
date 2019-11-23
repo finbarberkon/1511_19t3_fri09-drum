@@ -6,13 +6,19 @@
 #define TRUE 1
 #define FALSE 0
 
-int isVowel(int ch);
+int isAlpha(int ch);
 
 int main(void) {
     
     printf("Please enter some text to be stripped of punctuation:\n");
 
-    // TODO process characters
+    int ch = getchar();
+    while (ch != EOF) {
+        if (isAlpha(ch) == TRUE) {
+            putchar(ch);
+        }
+        ch = getchar();
+    }
 
     return 0;
 }
